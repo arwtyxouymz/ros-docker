@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     && wget http://packages.ros.org/ros.key -O - | apt-key add - \
     && apt-get update \
     && apt-get install -y \
-    git \
     ros-kinetic-desktop-full \
     python-dev \
     python-pip \
