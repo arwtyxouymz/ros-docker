@@ -17,9 +17,11 @@ RUN apt-get update && apt-get install -y \
     python-pip \
     python-rosinstall \
     python-catkin-tools \
+    jq \
     && rm -rf /var/lib/apt/lists/* \
     && rosdep init \
     && rosdep update \
     && /bin/bash -c 'echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc' \
     && mkdir -p /catkin_ws \
-    && catkin config --extend /opt/ros/kinetic --workspace /catkin_ws --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    && catkin config --extend /opt/ros/kinetic --workspace /catkin_ws --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+    && pip install compdb
