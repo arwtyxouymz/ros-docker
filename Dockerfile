@@ -24,3 +24,6 @@ RUN apt-get update && apt-get install -y \
     && /bin/bash -c 'echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc' \
     && mkdir -p /catkin_ws \
     && pip install compdb
+
+ADD build.sh build.sh
+CMD ["bash", "/build.sh"]
