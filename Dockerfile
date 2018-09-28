@@ -26,4 +26,5 @@ RUN apt-get update && apt-get install -y \
     && pip install compdb
 
 ADD build.sh build.sh
+WORKDIR /catkin_ws
 CMD ["bash", "/build.sh"]
